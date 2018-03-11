@@ -7,14 +7,9 @@ import net.corda.core.identity.Party;
 
 import java.util.List;
 
-///* Our state, defining a shared fact on the ledger.
-// * See src/main/kotlin/examples/IAmAState.java and
-// * src/main/kotlin/examples/IAmAlsoAState.java for examples. */
-//public class TokenState {
-//
-//}
-
-/* SOLUTION */
+/* Our state, defining a shared fact on the ledger.
+ * See src/main/kotlin/examples/IAmAState.java and
+ * src/main/kotlin/examples/IAmAlsoAState.java for examples. */
 public class TokenState implements ContractState {
     private final Party issuer;
     private final Party recipient;

@@ -8,18 +8,12 @@ import net.corda.core.transactions.LedgerTransaction;
 
 import static net.corda.core.contracts.ContractsDSL.requireThat;
 
-///* Our contract, governing how our state will evolve over time.
-// * See src/main/kotlin/examples/ExampleContract.java for an example. */
-//public class TokenContract {
-//
-//}
-
-/* SOLUTION */
+/* Our contract, governing how our state will evolve over time.
+ * See src/main/kotlin/examples/ExampleContract.java for an example. */
 public class TokenContract implements Contract {
     public static final String ID = "bootcamp.TokenContract";
 
-    public static class Issue implements CommandData {
-    }
+    public static class Issue implements CommandData { }
 
     @Override
     public void verify(LedgerTransaction tx) throws IllegalArgumentException {
