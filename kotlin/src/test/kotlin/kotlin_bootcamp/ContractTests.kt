@@ -1,4 +1,4 @@
-package bootcamp
+package kotlin_bootcamp
 
 import net.corda.core.identity.CordaX500Name
 import net.corda.testing.contracts.DummyState

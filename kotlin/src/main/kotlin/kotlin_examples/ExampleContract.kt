@@ -1,4 +1,4 @@
-package examples
+package kotlin_examples
 
 import net.corda.core.contracts.*
 import net.corda.core.crypto.SecureHash

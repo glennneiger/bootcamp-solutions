@@ -1,4 +1,4 @@
-package bootcamp
+package kotlin_bootcamp
 
 import net.corda.testing.core.chooseIdentity
 import net.corda.testing.node.MockNetwork
@@ -16,7 +16,7 @@ class FlowTests {
 
     @Before
     fun setup() {
-        network = MockNetwork(listOf("bootcamp"))
+        network = MockNetwork(listOf("kotlin_bootcamp"))
         a = network.createPartyNode()
         b = network.createPartyNode()
         network.runNetwork()
@@ -64,7 +64,7 @@ class FlowTests {
         assertEquals(1, signedTransaction.tx.outputStates.size)
         val output = signedTransaction.tx.outputs.single()
 
-        assertEquals("bootcamp.TokenContract", output.contract)
+        assertEquals("kotlin_bootcamp.TokenContract", output.contract)
     }
 
     @Test

@@ -1,4 +1,4 @@
-package bootcamp
+package kotlin_bootcamp
 
 import co.paralleluniverse.fibers.Suspendable
 import net.corda.core.contracts.CommandData
@@ -25,7 +25,7 @@ class TokenState(val issuer: Party, val recipient: Party, val amount: Int) : Con
  * See src/main/kotlin/examples/ExampleContract.kt for an example. */
 class TokenContract : Contract {
     companion object {
-        val ID = "bootcamp.TokenContract"
+        val ID = "kotlin_bootcamp.TokenContract"
     }
 
     object Issue: CommandData
@@ -41,7 +41,7 @@ class TokenContract : Contract {
         "Token amount should be positive" using (outputState.amount > 0)
 
         val command = tx.commands[0]
-        "Command should be Issue" using (command.value is TokenContract.Issue)
+        "Command should be Issue" using (command.value is Issue)
         "Issuer must sign the issuance" using (outputState.issuer.owningKey in command.signers)
     }
 }

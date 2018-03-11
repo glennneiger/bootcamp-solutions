@@ -1,4 +1,4 @@
-package bootcamp;
+package java_bootcamp;
 
 import net.corda.core.contracts.Command;
 import net.corda.core.contracts.CommandData;
@@ -11,7 +11,7 @@ import static net.corda.core.contracts.ContractsDSL.requireThat;
 /* Our contract, governing how our state will evolve over time.
  * See src/main/kotlin/examples/ExampleContract.java for an example. */
 public class TokenContract implements Contract {
-    public static final String ID = "bootcamp.TokenContract";
+    public static final String ID = "java_bootcamp.TokenContract";
 
     public static class Issue implements CommandData { }
 
@@ -28,7 +28,7 @@ public class TokenContract implements Contract {
             require.using("Token amount should be positive", outputTokenState.getAmount() > 0);
 
             Command<CommandData> command = tx.getCommand(0);
-            require.using("Command should be Issue", command.getValue() instanceof bootcamp.TokenContract.Issue);
+            require.using("Command should be Issue", command.getValue() instanceof TokenContract.Issue);
             require.using("Issuer must sign the issuance",
                     command.getSigners().contains(outputTokenState.getIssuer().getOwningKey()));
 

@@ -1,4 +1,4 @@
-package bootcamp;
+package java_bootcamp;
 
 import com.google.common.collect.ImmutableList;
 import net.corda.core.concurrent.CordaFuture;
@@ -21,7 +21,7 @@ public class FlowTests {
 
     @Before
     public void setup() {
-        network = new MockNetwork(ImmutableList.of("bootcamp"));
+        network = new MockNetwork(ImmutableList.of("java_bootcamp"));
         a = network.createPartyNode(null);
         b = network.createPartyNode(null);
         network.runNetwork();
@@ -69,7 +69,7 @@ public class FlowTests {
         assertEquals(1, signedTransaction.getTx().getOutputStates().size());
         TransactionState output = signedTransaction.getTx().getOutputs().get(0);
 
-        assertEquals("bootcamp.TokenContract", output.getContract());
+        assertEquals("java_bootcamp.TokenContract", output.getContract());
     }
 
     @Test
